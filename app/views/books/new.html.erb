@@ -1,0 +1,11 @@
+<div= "create">
+<%= form_for @book, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <font>Book title:</font><br>
+  <%= f.text_field :title %> <br>
+  <font>Give a short description</font><br>
+  <%= f.text_area :description %> <br>
+  <font>Price in euro's:</font><br>
+  <%= f.text_field :price %> <br>
+  <%= f.submit "Create" %>
+<% end %>
+<end>
