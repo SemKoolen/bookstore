@@ -1,6 +1,18 @@
+<% if @author.errors.any? %>
+  <div id="error_explanation">
+    <font color="red"><%= pluralize(@author.errors.count, "error") %> prohibited this article from being saved:</font>
+
+    <ul>
+    <% @author.errors.full_messages.each do |msg| %>
+      <li><font color="red"><%= msg %></font></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @author, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
   <font>Author name:</font><br>
-  <%= f.text_field :name, size: "20x1" %> <br>
+  <%= f.text_field :name, size: "20x1"%><br>
   <font>Biography:</font><br>
   <%= f.text_area :biography, size: "31x4" %> <br>
   <%= f.submit "Create" %>

@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   def index
+
     @authors= Author.all
   end
 
@@ -12,8 +13,12 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    Author.create(author_params)
-    redirect_to action: :index
+    @author = Author.new(author_params)
+    if @author.save
+      redirect_to action: :index
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,9 +26,12 @@ class AuthorsController < ApplicationController
   end
 
   def update
-    author= Author.find(params[:id])
-    author.update(author_params)
-    redirect_to action: :index
+    @author= Author.find(params[:id])
+    if @author.update(author_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
   end
 
   def destroy

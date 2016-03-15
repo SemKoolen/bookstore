@@ -1,6 +1,10 @@
 <%= form_for @book, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
   <font>Book title:</font><br>
-  <%= f.text_field :title, size: "20x1" %> <br>
+  <table class="special">
+    <tr>
+      <td><font STYLE="font-size: 16px;"><%= @book.title %></font></td>
+    </tr>
+  </table>
   <font>Give a short description</font><br>
   <%= f.text_area :description, size: "31x4" %> <br>
   <font>Select the author</font><br>

@@ -1,4 +1,16 @@
-<div class="border">
+<% if @book.errors.any? %>
+  <div id="error_explanation">
+    <font color="red"><%= pluralize(@book.errors.count, "error") %> prohibited this article from being saved:</font>
+
+    <ul>
+    <% @book.errors.full_messages.each do |msg| %>
+      <li><font color="red"><%= msg %></font></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_for @book, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
   <font>Book title:</font><br>
   <%= f.text_field :title, size: "20x1" %> <br>
@@ -8,4 +20,3 @@
   <%= f.text_field :price, size: "5x1" %> <br>
   <%= f.submit "Create" %>
 <% end %>
-<end>
