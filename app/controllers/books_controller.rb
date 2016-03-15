@@ -18,7 +18,10 @@ class BooksController < ApplicationController
 
   def update; end
 
-  def destroy; end
+  def destroy
+    Book.find(params[:id]).destroy
+    redirect_to action: :index
+  end
 
   private
   def book_params
