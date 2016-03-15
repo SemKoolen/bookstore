@@ -12,13 +12,14 @@
  *= require_tree .
  *= require_self
  */
- table {
+ .show, table {
      border-spacing: 5px;
-     background-color: "yellow";
- }
- table, th, td {
+}
+
+ .border, table, th, td {
    border: 1px solid black;
    border-collapse: collapse;
+   border-spacing: 5px;
  }
 
  th, td {
