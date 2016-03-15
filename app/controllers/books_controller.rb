@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   def index
+    @books= Book.all
   end
 
   def show; end
@@ -8,11 +9,19 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
-  def create; end
+  def create
+    Book.create(book_params)
+    redirect_to action: :index
+  end
 
   def edit; end
 
   def update; end
 
   def destroy; end
+
+  private
+  def book_params
+      params.require(:book).permit(:title, :description, :price)
+  end
 end

@@ -1,7 +1,6 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
+ * listed below
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
@@ -13,3 +12,15 @@
  *= require_tree .
  *= require_self
  */
+ table {
+     border-spacing: 5px;
+     background-color: "yellow";
+ }
+ table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+ }
+
+ th, td {
+    padding: 15px;
+}
