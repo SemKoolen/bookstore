@@ -1,12 +1,11 @@
-
-<div class="border">
 <%= form_for @book, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
   <font>Book title:</font><br>
   <%= f.text_field :title, size: "20x1" %> <br>
   <font>Give a short description</font><br>
   <%= f.text_area :description, size: "31x4" %> <br>
+  <font>Select the author</font><br>
+  <%= f.collection_select(:author_id, Author.all, :id, :name, include_blank: true) %><br>
   <font>Price in euro's:</font><br>
   <%= f.text_field :price, size: "5x1" %> <br>
   <%= f.submit "Edit" %>
 <% end %>
-<end>

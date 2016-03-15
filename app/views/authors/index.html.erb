@@ -1,0 +1,30 @@
+<h1>Listing Authors</h1>
+<div class="border">
+<table style="width:100%">
+  <tr>
+    <th>Author</th>
+    <th>Biography</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @authors.each do |author| %>
+  <tr>
+    <td><center><%= author.name %></center></td>
+    <td><%= author.biography %></td>
+    <td><%= link_to "Show", author %></td>
+    <td><%= link_to "Edit", edit_author_path(author) %></td>
+    <td><%= link_to "Remove", author, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<br>
+
+<center>
+  <%= link_to "See our list of books", books_path %>
+  <font>  or  </font>
+  <%= link_to "Add a new author", new_author_path %>
+</center>

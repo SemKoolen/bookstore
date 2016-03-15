@@ -1,0 +1,7 @@
+<%= form_for @author, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <font>Author name:</font><br>
+  <%= f.text_field :name, size: "20x1" %> <br>
+  <font>Biography:</font><br>
+  <%= f.text_area :biography, size: "31x4" %> <br>
+  <%= f.submit "Create" %>
+<% end %>

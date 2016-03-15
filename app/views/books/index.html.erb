@@ -3,6 +3,7 @@
 <table style="width:100%">
   <tr>
     <th>Title</th>
+    <th>Author</th>
     <th>Description</th>
     <th>Price</th>
     <th></th>
@@ -12,7 +13,12 @@
 
 <% @books.each do |book| %>
   <tr>
-    <td><%= book.title %></td>
+    <td><center><%= book.title %></center></td>
+    <% if book.author.present? %>
+      <td><center><%= book.author.name %></center></td>
+    <% else %>
+      <td><center>No author defined</center></td>
+    <% end %>
     <td><%= book.description %></td>
     <td><%= book.price %></td>
     <td><%= link_to "Show", book %></td>
@@ -25,4 +31,8 @@
 
 <br>
 
-<center><%= link_to "Add a new book", new_book_path %></center>
+<center>
+  <%= link_to "Visit our list of authors", authors_path %>
+  <font>or</font>
+  <%= link_to "Add a new book", new_book_path %>
+</center>
