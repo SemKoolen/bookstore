@@ -2,7 +2,11 @@
 <center>
 <table style="width:50%">
   <tr>
-    <th><H1><%=@book.title %></h1></th>
+    <th>
+      <h1><%=@book.title %></h1><br>
+      <font>by:</font>
+      <%= @book.author.name %>
+    </th>
   </tr><tr></tr>
   <tr>
     <td><center><%= @book.description %></center></td>

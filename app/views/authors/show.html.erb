@@ -8,7 +8,23 @@
     <td><center><%= @author.biography %></center></td>
   </tr><tr></tr>
   <tr>
-    <td><center><%= link_to "Return to author list", authors_path %><center></td>
+    <td>
+      <center>
+        <font>Books by this author:</font><br><br>
+        <% @author.books.each do |book| %>
+        <%= book.title %><br>
+        <% end %>
+      </center>
+    </td>
+  </tr>
+  <tr>
+      <td>
+        <center>
+          <%= link_to "Return to author list", authors_path %>
+          <font>or</font>
+          <%= link_to "Edit this page", edit_author_path(@author) %>
+        </center>
+      </td>
   </tr>
 </table>
 </center>
